@@ -18,7 +18,8 @@ def main():
             if "Nombre Cliente" in data.columns:
                 # Crear opciones de filtrado para "Nombre Cliente"
                 clientes = data["Nombre Cliente"].unique().tolist()
-                opciones_clientes = ["Todos"] + sorted(clientes)
+                # Convertir todos los elementos a cadena para evitar errores de comparación
+                opciones_clientes = ["Todos"] + sorted(clientes, key=lambda x: str(x))
                 filtro_cliente = st.selectbox("Filtrar por Nombre Cliente", opciones_clientes)
     
                 # Filtrar la data según el cliente seleccionado
@@ -31,8 +32,6 @@ def main():
                     valores = col.unique().tolist()
                     valores = ["Sin datos" if pd.isna(x) else x for x in valores]
                     return sorted(valores, key=lambda x: (x == "Sin datos", str(x)))
-
-                    
     
                 # Verificar si existe la columna "Apagado Orlando"
                 if "Apagado Orlando" in data.columns:
