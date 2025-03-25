@@ -1,4 +1,6 @@
-streamlist
+streamlit
 pandas
 openpyxl
 xlrd
+matplotlib
+
