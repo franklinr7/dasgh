@@ -30,7 +30,9 @@ def main():
                 def preparar_valores(col):
                     valores = col.unique().tolist()
                     valores = ["Sin datos" if pd.isna(x) else x for x in valores]
-                    return sorted(valores, key=lambda x: (x == "Sin datos", x))
+                    return sorted(valores, key=lambda x: (x == "Sin datos", str(x)))
+
+                    
     
                 # Verificar si existe la columna "Apagado Orlando"
                 if "Apagado Orlando" in data.columns:
