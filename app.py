@@ -188,11 +188,9 @@ def main():
                 - **Verificar estados críticos:** Observa si existen muchos registros con 'Desactivado' o nuevos estados no contemplados (aparecerán en azul/rosado).
                 - **Monitorear WebHosting:** Correlaciona el estado de WebHosting con la actividad de los clientes para identificar cuellos de botella.
                 - **Segmentación de clientes:** Usa "Nombre Cliente" para estrategias de marketing y soporte específicas.
-                - **Revisión periódica:** El dashboard se actualiza cada 5 minutos; aprovecha la información en tiempo real para tomar decisiones informadas.
-                - **Escalabilidad:** Al asignar colores dinámicos, puedes agregar nuevos estados sin romper la visualización.
                 """)
             
-            st.info("Dashboard se actualiza cada 5 minutos")
+            st.info("Dashboard cargado correctamente")
             
         except Exception as e:
             st.error(f"Error al cargar el archivo: {e}")
